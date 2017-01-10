@@ -1,41 +1,28 @@
-# Installation instructions - Aegon #
+# Installation instructions - projectname #
 
 
 ## Front-end installation ##
- 
-1. **Install Bower**
 
-	Bower can be installed using [npm](https://nodejs.org/en/), the Node package manager. If you don’t already have npm installed, head over to the [Node.js website](https://nodejs.org/en/) and download the relevant copy of Node.js for your system. The npm program is included with the install of Node.js.
+1. **Install dependencies**
+
+	If you don’t already have npm installed, head over to the [Node.js website](https://nodejs.org/en/) and download the relevant copy of Node.js for your system. The npm program is included with the install of Node.js.
 
 	Once you have npm installed, open up Terminal (or Command Prompt) and enter the following command:
 
-    `npm install -g bower`
-2. **Install Bower packages**
+    `npm install`		
 
-	Install packages with `bower install` from within the project `/Static` folder. Bower installs packages to `libs/`.
-	
-	`bower install`
+2. **Install Gulp-cli**
 
-3. **Install NPM packages**
+> The Gulp command line interface.
 
+Install this globally and you'll have access to the gulp command anywhere on your system.
 
-	From within the project `/Static` folder install the NPM packages.
+	`npm install -g gulp-cli`
 
-	`npm install`
+3. **Run project**
 
-4. **Install Grunt-cli**
-	
-> The Grunt command line interface.
-		
-Install this globally and you'll have access to the grunt command anywhere on your system.	
-
-	`npm install -g grunt-cli`
-
-5. **Run project**
-
-	`grunt develop`
+	`npm run start`
 
 ## Credits ##
 
-- Wessel Terpstra - [wessel.terpstra@valtech.nl](wessel.terpstra@valtech.nl)
 - Martijn de Valk - [martijn.de.valk@valtech.nl](martijn.de.valk@valtech.nl)
