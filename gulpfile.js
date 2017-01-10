@@ -30,10 +30,8 @@ gulp.task('clean-temp', function () {
 
 // Javascript
 // Transpiling ES6 Modules to CommonJS Using Babel & Gulp
-// https://goo.gl/JsElNa
 
 gulp.task('build-js', function() {
-    // app.js is your main JS file with all your module inclusions
     return browserify({
             entries: './src/js/entry.js',
             debug: true
