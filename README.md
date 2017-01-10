@@ -9,13 +9,13 @@
 
 	Once you have npm installed, open up Terminal (or Command Prompt) and enter the following command:
 
-    `npm install`		
+  `npm install`		
 
 2. **Install Gulp-cli**
 
 > The Gulp command line interface.
 
-Install this globally and you'll have access to the gulp command anywhere on your system.
+	Install this globally and you'll have access to the gulp command anywhere on your system.
 
 	`npm install -g gulp-cli`
 
