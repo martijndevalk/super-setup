@@ -1,0 +1,190 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+
+// Hover color
+$darken: 12%;
+
+.button {
+    padding: ($base-line-height / 4) ($gutter-width / 2);
+    font-weight: 400;
+    display: inline-flex;
+    align-items: center;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 400ms ease-out;
+    vertical-align: middle;
+
+    @include type-setting(-1);
+
+    @include min-screen($small) {
+        padding: ($base-line-height / 3) $gutter-width;
+
+        @include type-setting(0);
+    }
+
+    @include on-event {
+        text-decoration: none;
+    }
+
+    // Small size button
+    &--small {
+        padding: ($base-line-height / 4) ($gutter-width / 2);
+
+        @include type-setting(-1);
+    }
+
+    // Large size button
+    &--large {
+        padding: ($base-line-height / 2.2) ($gutter-width * 1.2);
+
+        @include type-setting(1);
+    }
+
+    // Button filled with color
+    &--default {
+        color: $white;
+    }
+
+    &--primary {
+        background-color: $brand-blue;
+        color: $white;
+
+        @include on-event {
+            background-color: darken($brand-blue, $darken);
+            color: $white;
+        }
+    }
+
+    &--secondary {
+        background-color: $gold-drop;
+        color: $white;
+
+        @include on-event {
+            background-color: darken($gold-drop, $darken);
+            color: $white;
+        }
+    }
+
+    &--tertiary {
+        background-color: $apple;
+        color: $white;
+
+        @include on-event {
+            background-color: darken($apple, $darken);
+            color: $white;
+        }
+    }
+
+    // Button with border
+    &--default-hollow {
+        border: 1px solid $white;
+        color: $white;
+
+        @include on-event {
+            border-color: darken($white, $darken);
+            color: darken($white, $darken);
+            background-color: rgba($white, 0.05);
+        }
+    }
+
+    &--primary-hollow {
+        background-color: transparent;
+        border: 1px solid $brand-blue;
+        color: $brand-blue;
+
+        @include on-event {
+            border-color: darken($brand-blue, $darken);
+            color: darken($brand-blue, $darken);
+            background-color: rgba($brand-blue, 0.05);
+        }
+    }
+
+    &--secondary-hollow {
+        background-color: transparent;
+        border: 1px solid $gold-drop;
+        color: $gold-drop;
+
+        @include on-event {
+            border-color: darken($gold-drop, $darken);
+            color: darken($gold-drop, $darken);
+            background-color: rgba($gold-drop, 0.05);
+        }
+    }
+
+    &--tertiary-hollow {
+        background-color: transparent;
+        border: 1px solid $apple;
+        color: $apple;
+
+        @include on-event {
+            border-color: darken($apple, $darken);
+            color: darken($apple, $darken);
+            background-color: rgba($apple, 0.05);
+        }
+    }
+
+    // Button looks like a normal link
+    &--default-link {
+        padding-left: 0;
+        padding-right: 0;
+        background-color: transparent;
+        color: $white;
+
+        @include on-event {
+            color: darken($white, $darken);
+            text-decoration: underline;
+        }
+    }
+
+    &--primary-link {
+        padding-left: 0;
+        padding-right: 0;
+        background-color: transparent;
+        color: $brand-blue;
+
+        @include on-event {
+            color: darken($brand-blue, $darken);
+            text-decoration: underline;
+        }
+    }
+
+    &--secondary-link {
+        padding-left: 0;
+        padding-right: 0;
+        background-color: transparent;
+        color: $gold-drop;
+
+        @include on-event {
+            color: darken($gold-drop, $darken);
+            text-decoration: underline;
+        }
+    }
+
+    &--tertiary-link {
+        padding-left: 0;
+        padding-right: 0;
+        background-color: transparent;
+        color: $apple;
+
+        @include on-event {
+            color: darken($apple, $darken);
+            text-decoration: underline;
+        }
+    }
+
+    // Button arrow
+    &__arrow {
+        width: 8px;
+        margin-left: ($gutter-width / 2);
+        color: inherit;
+        transition: inherit;
+
+        .svg-container {
+            @include svg-responsive (14px, 24px, 100%);
+        }
+    }
+}
