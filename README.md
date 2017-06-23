@@ -26,13 +26,13 @@ your system.
 
 ### <a name="front-end-install" href="#front-end-install">Installation</a>
 
-- Install npm packates
+- Install npm packages
   Once you have npm installed, open up Terminal (or Command Prompt) and enter
   the following command from within the project `/Static` folder:
   `npm install`
 - Run project  
-  If you want to watch call `npm run start`  
-  If you want to compile files once call `npm run build`
+  If you want to start developing, call `npm run dev`  
+  If you want to build and compile all files once, call `npm run build`
 
 
 ### <a name="front-end-frameworks" href="#front-end-frameworks">Libraries and frameworks used</a>

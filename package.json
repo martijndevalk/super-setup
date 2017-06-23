@@ -1,10 +1,10 @@
 {
   "name": "supersetup",
   "version": "1.0.0",
-  "description": "Taskrunner setup",
+  "description": "Taskrunner boilerplate",
   "main": "gulpfile.js",
   "scripts": {
-    "start": "gulp default --env development",
+    "dev": "gulp default --env development",
     "build": "gulp build --env production"
   },
   "dependencies": {
