@@ -2,44 +2,158 @@
 // This file contains all application-wide Sass variables.
 // -----------------------------------------------------------------------------
 
-/// Susy settings
-$susy: (
-    columns: 12,
-    container: 1200px,
-    gutters: 1/4,
-    global-box-sizing: border-box,
-    debug: (image: hide)
-);
+/// Container's maximum width
+$max-width: 1366px !default;
+
+/// Container's minimum width
+$min-width: 320px !default;
+
+/// Site maximum width
+$max-site-width: 1780px !default;
+
+/// Grid gutter
+$gutter-width: 20px !default;
 
 /// Regular font family
-/// @type List
-$text-font-stack: 'Lato', serif;
-
-/// Regular font family
-/// @type List
-$heading-font-stack: 'Nunito', sans-serif;
-
+$text-font-stack: 'Sentico Sans', sans-serif !default;
 
 /// Code (monospace) font family
-/// @type List
 $code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace !default;
 
-/// Colors
-/// https://www.viget.com/articles/naming-colors
-/// http://chir.ag/projects/name-that-color/
-/// @type Color
-$black                : #000000 !default;
-$white                : #ffffff !default;
-$gray                 : #888888 !default;
-$ebony                : #080f19 !default;
-$shiraz               : #C2072E !default;
-$toryblue             : #1262AC !default;
-$anakiwa              : #93d8ff !default;
+$base-font-size: 1rem;
+$base-line-height: $base-font-size * 1.5;
 
+// Sidebar
+$primary-sidebar: 200px;
+$secondary-sidebar: 260px;
 
-/// Icon path
-$icomoon-font-path: "fonts" !default;
+// Header
+$header-height: 70px;
 
-/// Icons
-$icon-chevron-with-circle-right: "\e900";
+/// Media queries
+/// Breakpoints
+$xsmall: $min-width;
+$small:  480px;
+$medium: 768px;
+$large:  1024px;
+$xlarge:  $max-width;
 
+// Ratio 1.125 (8:9, or a major second).
+// http://www.modularscale.com/?1&em&1.125&web&text
+$type-settings: (
+    -2: (
+        font-size: 0.79rem, // 12px
+        line-height: $base-line-height / 1.5
+    ),
+    -1: (
+        font-size: 0.889rem, // 14px
+        line-height: $base-line-height / 1.3
+    ),
+    0: (
+        font-size: 1rem, // 16px
+        line-height: $base-line-height
+    ),
+    1: (
+        font-size: 1.125rem, // 18px
+        line-height: $base-line-height
+    ),
+    2: (
+        font-size: 1.266rem, // 20px
+        line-height: $base-line-height
+    ),
+    3: (
+        font-size: 1.424rem, // 22px
+        line-height: $base-line-height * 1.2
+    ),
+    4: (
+        font-size: 2.027rem, // 32px
+        line-height: $base-line-height * 1.3
+    ),
+    5: (
+        font-size: 2.566rem, // 41px
+        line-height: $base-line-height * 2
+    ),
+    6: (
+        font-size: 3.247rem, // 51px
+        line-height: $base-line-height * 2
+    ),
+    7: (
+        font-size: 4.624rem, // 73px
+        line-height: $base-line-height * 3
+    )
+);
+
+// Brand-blue
+// Primary color palette
+$aegon-blue:          #0077c8;
+$prussian-blue:       #001e32;
+$regal-blue:          #003c64;
+$bahama-blue:         #005996;
+$curious-blue:        #3395d3;
+$link-water:          #e5f1f9;
+
+// Greyscale
+// Supporting primary color palette
+$black:               #000;
+$lighter-gray:        #f2f2f2;
+$light-gray:          #e8e8e8;
+$medium-gray:         #a5a5a5;
+$dark-gray:           #1d1d1d;
+$white:               #fff;
+
+// Accent colours
+// The accent color palette complements the Aegon's primary color palette.
+// Typical applications for use of the accent color palette are limited to graphic
+// elements such as illustrations, pie charts, graphs and tables where distinction
+// and comparison of information is required.
+
+// Brand-blue
+$eastern-blue:        #1885a7;
+$cerulean:            #08a5d3;
+$santorini:           #0ab9eb;
+$picton-blue:         #3bc7ef;
+$viking:              #61c3d9;
+$charlotte:           #9de3f7;
+
+// Brand-purple
+$dark-affair:         #563a73;
+$affair:              #6d4592;
+$violet:              #764aa0;
+$wisteria:            #916eb3;
+$snuff:               #c8b7d9;
+
+// Brand-red
+$monza:               #dc0720;
+$sanguine:            #923634;
+$chestnut:            #b8423e;
+$mojo:                #ca4642;
+$chestnut-rose:       #d56b68;
+$beauty-bush:         #eab5b3;
+
+// Brand-orange
+$hawaiian-tan:        #ae5c19;
+$mango-tango:         #dc7303;
+$gold-drop:           #f27d00;
+$sea-buckthorn:       #f59733;
+$corvette:            #facb99;
+
+// Brand-yellow
+$alpine:              #b7912e;
+$tulip-tree:          #e6b627;
+$lightning-yellow:    #fdc828;
+$dandelion:           #fdd353;
+$cream-brulee:        #fee9a9;
+
+// Brand-green
+$goblin:              #347d3e;
+$fruit-salad:         #419c4d;
+$apple:               #49af57;
+$fern:                #6dbf79;
+$celadon:             #b6dfbc;
+
+// Brand-agua
+$genoa:               #117664;
+$puerto-rico:         #3bc8bc;
+$turquoise:           #47d6c7;
+$aquamarine:          #7df9e7;
+$cruise:              #b5eae1;

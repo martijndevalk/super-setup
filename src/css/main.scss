@@ -1,5 +1,8 @@
 @charset 'UTF-8';
 
+// This is based on the 7-1 pattern
+// https://sass-guidelin.es/#architecture
+
 // 1. Configuration and helpers
 @import
     'abstracts/variables',
@@ -14,26 +17,26 @@
 @import
     'base/base',
     'base/fonts',
-    'base/icons',
     'base/typography',
+    'base/tables',
+    'base/forms',
     'base/helpers';
 
 // 4. Layout-related sections
 @import
     'layout/header',
-    'layout/navigation',
-    'layout/main-content',
     'layout/footer';
 
 // 5. Components
 @import
-    'components/button',
-    'components/site-message',
-    'components/splash-anim',
-    'components/social-sharing';
+    'components/componentname';
 
 // 6. Page-specific styles
-@import 'pages/home';
+@import
+    'pages/page';
 
 // 7. Themes
-//@import 'themes/default';
+
+// The shame file
+@import
+    'shame';

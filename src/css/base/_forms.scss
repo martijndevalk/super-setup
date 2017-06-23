@@ -1,0 +1,203 @@
+// -----------------------------------------------------------------------------
+// This file contains basic form styles.
+// -----------------------------------------------------------------------------
+
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="url"],
+select,
+textarea {
+    height: 38px;
+    padding: 6px 10px;
+    // The 6px vertically centers text on FF, ignored by Webkit
+    background-color: $white;
+    border: 1px solid $lighter-gray;
+    box-shadow: none;
+    font-weight: 300;
+    transition: border 300ms ease-out;
+
+    @include type-setting(-1);
+
+    @include on-event {
+        border-color: darken($lighter-gray, 10%);
+        outline: 0;
+    }
+}
+
+::placeholder {
+    font-size: 90%;
+    color: $dark-gray;
+    font-style: italic;
+}
+
+/* Removes awkward default styles on some inputs for iOS */
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="url"],
+textarea {
+    appearance: none;
+}
+
+textarea {
+    min-height: 65px;
+}
+
+// Custom checkbox/radio/select
+.control {
+    padding-left: 26px;
+    display: block;
+    position: relative;
+
+    @include type-setting(0);
+
+    @include on-event {
+        cursor: pointer;
+        user-select: none;
+    }
+
+    input {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+    }
+
+    &__indicator {
+        position: absolute;
+        top: 2px;
+        left: 0;
+        height: 18px;
+        width: 18px;
+        background: $white;
+        border: 1px solid $light-gray;
+        transition: all 400ms ease-out;
+
+        &::after {
+            content: '';
+            position: absolute;
+            display: none;
+        }
+    }
+
+    &--checkbox .control__indicator {
+        border-radius: 2px;
+    }
+
+    &--radio .control__indicator {
+        border-radius: 50%;
+    }
+
+    input:focus ~ .control__indicator,
+    &:hover input ~ .control__indicator {
+        border-color: $curious-blue;
+    }
+
+    input:checked ~ .control__indicator {
+        color: $curious-blue;
+        border: 1px solid $curious-blue;
+    }
+
+    input:disabled ~ .control__indicator {
+        background: $lighter-gray;
+        border: 1px solid $medium-gray;
+        opacity: 0.6;
+        pointer-events: none;
+    }
+
+    input:checked ~ .control__indicator::after {
+        display: block;
+    }
+
+    &--checkbox .control__indicator::after {
+        left: 50%;
+        top: 50%;
+        width: 4px;
+        height: 10px;
+        border: solid $curious-blue;
+        border-width: 0 2px 2px 0;
+        transform: translate(-50%, -55%) rotate(45deg);
+    }
+
+    &--checkbox input:disabled ~ .control__indicator::after {
+        border-color: $medium-gray;
+    }
+
+    &--radio .control__indicator::after {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        height: 9px;
+        width: 9px;
+        border-radius: 50%;
+        background: $curious-blue;
+    }
+
+    &--radio input:disabled ~ .control__indicator::after {
+        background: $medium-gray;
+    }
+}
+
+.select {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 15px;
+    width: 100%;
+
+    select {
+        display: inline-block;
+        width: 100%;
+        cursor: pointer;
+        padding: 10px 15px;
+        outline: 0;
+        border: 0;
+        border-radius: 0;
+        background: $lighter-gray;
+        color: $medium-gray;
+        appearance: none;
+        transition: all 400ms ease-out;
+
+        @include type-setting(0);
+
+        @include on-event {
+            color: $prussian-blue;
+            background: $light-gray;
+        }
+
+        &:disabled {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+    }
+
+    select::-ms-expand {
+        display: none;
+    }
+
+    select:focus ~ .select__arrow,
+    select:hover ~ .select__arrow {
+        border-top-color: $curious-blue;
+    }
+
+    select:disabled ~ .select__arrow {
+        border-top-color: $light-gray;
+    }
+
+    .select__arrow {
+        position: absolute;
+        top: 16px;
+        right: 15px;
+        width: 0;
+        height: 0;
+        pointer-events: none;
+        border-style: solid;
+        border-width: 6px 5px 0;
+        border-color: $medium-gray transparent transparent transparent;
+    }
+}

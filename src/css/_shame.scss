@@ -1,0 +1,104 @@
+// -----------------------------------------------------------------------------
+// This file contains all the dirty hacks and specificity fixes to make them
+// more transparent, quantifiable and isolated;
+// Dedicated to housing your nasty, hacky, quick-fix code
+// -----------------------------------------------------------------------------
+
+// IE10+ specific styles go here
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .header-banner {
+        @include min-screen($medium) {
+            // IE flexbox vertical alignment fix
+            height: 250px;
+        }
+    }
+
+    .quote-small {
+        // IE flexbox vertical alignment fix
+        height: 140px;
+
+        // IE flexbox vertical alignment fix
+        @include min-screen($medium) {
+            height: 210px;
+        }
+    }
+
+    // Target windows 7 IE
+    .win7 {
+        .quote-small__text__quote::before {
+            top: 1rem;
+        }
+
+        .video-banner__overlay__text__quote::before {
+            top: 0;
+        }
+
+        .quote-large__text__quote::before {
+            top: 0;
+        }
+    }
+}
+
+// CMS specific styles go here
+.cms-editmode {
+    #app {
+        background-color: $white;
+    }
+
+    .people-detail__main__info {
+        span,
+        div {
+            display: inline-block;
+        }
+    }
+
+    .image-banner__wrap, 
+    .video-banner__wrap {
+        height: 500px;
+
+        @include min-screen($medium) {
+            height: 700px;
+        }
+    }
+}
+
+// CMS TinyMCE specific styles go here
+#tinymce {
+    background-color: $white;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-bottom: 0;
+        font-weight: 400;
+    }
+
+    ul {
+        @extend .aegon-list;
+    }
+
+    li {
+        margin-left: 1rem;
+    }
+}
+
+.language-menu-select {
+    > * {
+        // Bugfix for some browsers stacking the flex items(grow = yes, shrink = no, basis: auto)
+        flex: 1 0 auto;
+    }
+}
+
+// Kurtosys wdiget
+.kurtosys-widget {
+    @include min-screen($large) {
+        margin-left: calc(#{ $primary-sidebar } + #{ ($gutter-width * 2) });
+    }
+
+    @include min-screen($xlarge) {
+        margin-left: calc(#{ $primary-sidebar } + #{ ($gutter-width * 3) });
+    }
+}

@@ -2,84 +2,129 @@
 // This file contains all application-wide Sass mixins.
 // -----------------------------------------------------------------------------
 
-/// Sass Contexts-events
-/// https://css-tricks.com/snippets/sass/simplifying-contexts-events/
-
-/// Event wrapper
-/// @author Harry Roberts
-/// @param {Bool} $self [false] - Whether or not to include current selector
-/// @link https://twitter.com/csswizardry/status/478938530342006784 Original tweet from Harry Roberts
-@mixin on-event($self: false) {
-    @if $self {
-        &,
-        &:hover,
-        &:active,
-        &:focus {
-            @content;
-        }
-    } @else {
-        &:hover,
-        &:active,
-        &:focus {
-            @content;
-        }
-    }
-}
-
-/// Make a context based selector a little more friendly
-/// @author Hugo Giraudel
-/// @param {String} $context
-@mixin when-inside($context) {
-    #{$context} & {
-        @content;
-    }
-}
-
-
-// Clearfix mixin
+/// Clearfix
 @mixin clearfix {
-    &:after {
+    &::after {
         content: "";
         display: table;
         clear: both;
     }
 }
 
+/// Simplifying Contexts and Events
+/// Event wrapper
+/// Usage: @include on-event {}
+@mixin on-event($self: false) {
+    @if $self {
+        &,
+        &:active,
+        &:focus,
+        &:hover {
+            @content;
+        }
+    }
 
-/// Responsive layout
-/// Breakpoints
-$medium-width: 769px;
-$large-width: 1024px;
+    @else {
+        &:active,
+        &:focus,
+        &:hover {
+            @content;
+        }
+    }
+}
 
-@mixin small-only {
-    @media (max-width: #{$medium-width - 1px}) {
+/// Make a context based selector a little more friendly
+/// Usage: @include when-inside('.no-flexbox') {}
+@mixin when-inside($context) {
+    #{$context} & {
         @content;
     }
 }
 
-@mixin medium-only {
-    @media (min-width: #{$medium-width}) and (max-width: #{$large-width - 1px}) {
+/// Typography levels
+/// Usage: @include type-setting(0);
+@mixin type-setting($level) {
+    font-size: type-scale($level);
+    line-height: line-height($level);
+}
+
+/// Sass Mediaqueries
+/// More info: https://github.com/paranoida/sass-mediaqueries
+/// Usage: scrolldown for more info
+
+// Generator
+@mixin mq($args...) {
+    $media-type: 'only screen';
+    $media-type-key: 'media-type';
+    $args: keywords($args);
+    $expr: '';
+
+    @if map-has-key($args, $media-type-key) {
+        $media-type: map-get($args, $media-type-key);
+        $args: map-remove($args, $media-type-key);
+    }
+
+    @each $key, $value in $args {
+        @if $value {
+            $expr: "#{$expr} and (#{$key}: #{$value})";
+        }
+    }
+
+    @media #{$media-type} #{$expr} {
         @content;
     }
 }
 
-@mixin medium-and-up {
-    @media (min-width: #{$medium-width}) {
+// Screens
+@mixin screen($min, $max, $orientation: false) {
+    @include mq($min-width: $min, $max-width: $max, $orientation: $orientation) {
         @content;
     }
 }
 
-@mixin print {
-    @media print {
+@mixin max-screen($max) {
+    @include mq($max-width: $max) {
         @content;
     }
 }
 
+@mixin min-screen($min) {
+    @include mq($min-width: $min) {
+        @content;
+    }
+}
+
+@mixin landscape() {
+    @include mq($orientation: landscape) {
+        @content;
+    }
+}
+
+@mixin portrait() {
+    @include mq($orientation: portrait) {
+        @content;
+    }
+}
+
+// Landscape only
+// @include mq($orientation: landscape) {}
+
+// Portrait only
+// @include mq($orientation: portrait) {}
+
+// Targets group of devices or just one with particular screen width and orientation (optional).
+// @include screen($xsmall, $medium, landscape) {}
+
+// If [device width] is greater than or equal to [specified #], then do {...}
+// @include min-screen($medium) {}
+
+// If [device width] is less than or equal to [specified #], then do {...}
+// @include max-screen($medium - 1) {}
 
 /// Responsive svg
 /// Padding Hack
 /// Usage: @include svg-responsive (width, height, context);
-@mixin svg-responsive($svgWidth: 1, $svgHeight: 1, $context: 100%) {
+@mixin svg-responsive($svgWidth, $svgHeight, $context: 100%) {
     //collapse the container's height
     height: 0;
     // specify any width you want (a percentage value, basically)
@@ -89,90 +134,4 @@ $large-width: 1024px;
     padding-top: ($svgHeight / $svgWidth) * $context;
     // create positioning context for svg
     position: relative;
-}
-
-
-// Burger
-@mixin burger($width: 30px, $height: 5px, $gutter: 3px, $color: #000, $border-radius: 0, $transition-duration: .3s) {
-    $burger-height: $height !global;
-    $burger-gutter: $gutter !global;
-
-    position: relative;
-    margin-top: $height + $gutter;
-    margin-bottom: $height + $gutter;
-
-    user-select: none;
-
-    // 1. Fixes jagged edges in Firefox, see issue #10.
-    &, &::before, &::after {
-        display: block;
-        width: $width;
-        height: $height;
-        background-color: $color;
-        outline: 1px solid transparent; // 1
-        @if $border-radius != 0 {
-            border-radius: $border-radius;
-        }
-
-        transition-property: background-color, transform;
-        transition-duration: $transition-duration;
-    }
-
-    &::before, &::after {
-        position: absolute;
-        content: "";
-    }
-
-    &::before {
-        top: -($height + $gutter);
-    }
-
-    &::after {
-        top: $height + $gutter;
-    }
-}
-
-
-// Select parts of the burger
-@mixin burger-parts {
-    &, &::before, &::after {
-        @content;
-    }
-}
-
-@mixin burger-top {
-    &::before {
-        @content;
-    }
-}
-
-@mixin burger-middle {
-    & {
-        @content;
-    }
-}
-
-@mixin burger-bottom {
-    &::after {
-        @content;
-    }
-}
-
-
-// Burger animations
-@mixin burger-to-cross($color: auto) {
-    & {
-        background-color: transparent;
-    }
-    @if ($color != auto) {
-        &::before, &::after {
-            background-color: $color;
-        }
-    }
-    &::before {
-        transform: translateY($burger-gutter + $burger-height) rotate(45deg);
-    }
-    &::after {
-        transform: translateY(-($burger-gutter + $burger-height)) rotate(-45deg);
-            }
 }

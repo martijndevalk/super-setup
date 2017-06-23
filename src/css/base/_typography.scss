@@ -1,16 +1,98 @@
 /**
-* Basic typography style for copy text
-*/
+ * Basic typography style for copy text
+ */
+
 body {
-    color: $white;
-    font: normal 125% / 1.4 $text-font-stack;
+    font-family: $text-font-stack;
+    color: $prussian-blue;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: $heading-font-stack;
+// Typo base settings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+blockquote,
+small {
+    margin: 0 0 $base-line-height;
 }
 
-p, ul {
-    font-size: 1.6rem;
-    line-height: 1.5;
+p,
+small,
+li {
+    font-weight: 300;
+
+    @include type-setting(1);
+}
+
+br {
+    margin: 10px 0;
+    display: block;
+}
+
+// Headings
+h1 { @include type-setting(6); }
+h2 { @include type-setting(3); }
+h3 { @include type-setting(2); }
+h4 { @include type-setting(1); }
+h5 { @include type-setting(0); }
+h6 { @include type-setting(-1); }
+
+strong,
+b {
+    font-weight: 400;
+}
+
+// Lists
+ul {
+    list-style: none;
+}
+
+ol {
+    list-style: decimal inside;
+}
+
+ol,
+ul {
+    padding-left: 0;
+    margin-top: 0;
+}
+
+li + li {
+    margin-top: $base-line-height;
+}
+
+// Aegon list
+.aegon-list {
+    li {
+        position: relative;
+
+        @include max-screen($medium - 1) {
+            margin-left: 1rem;
+        }
+
+        &::before {
+            content: '';
+            width: 9px;
+            height: 9px;
+            position: absolute;
+            top: 0.4rem;
+            left: -1.1rem;
+            transform: rotate(-18deg);
+            background-color: $aegon-blue;
+        }
+    }
+}
+
+// Misc
+hr {
+    margin-top: 3rem;
+    margin-bottom: 3.5rem;
+    border-top: 1px solid $lighter-gray;
+    border-width: 0;
 }

@@ -2,39 +2,21 @@
 // This file contains very basic styles.
 // -----------------------------------------------------------------------------
 
-/**
-* Set up a decent box model on the root element
-*/
-html {
-    box-sizing: border-box;
-    font-size: 52.5%;
-    touch-action: manipulation;
-    overflow-x: hidden;
-    @include medium-and-up {
-        font-size: 62.5%;
-    }
-}
-
-/**
-* Make all elements from the DOM inherit from the parent box-sizing
-* Since `*` has a specificity of 0, it does not override the `html` value
-* making all elements inheriting from the root box-sizing value
-* See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
-*/
-*, *::before, *::after {
-    box-sizing: inherit;
-}
-
+// body background
 body {
-    background-color: blue;
+    background-color: $light-gray;
 }
 
 /**
-* Basic styles for links
-*/
+ * Basic styles for links
+ */
 a {
-    color: $anakiwa;
     text-decoration: none;
+    color: $aegon-blue;
+
+    @include on-event {
+        text-decoration: underline;
+    }
 }
 
 // iFrame
@@ -42,26 +24,25 @@ iframe {
     width: 100%;
 }
 
-// Tables
-table {
-    width: 100%;
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-th,
-td {
-    padding: 1rem 1rem;
-    text-align: left;
-    font-size: 1.6rem;
-    border-bottom: 1px solid blue;
-}
-
-th:first-child,
-td:first-child {
-    padding-left: 0;
+// Reset button
+button {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: none;
+    line-height: 1;
+    cursor: pointer;
 }
 
-th:last-child,
-td:last-child {
-    padding-right: 0;
+// Reset ul when inside nav
+nav ul {
+    margin: 0;
+    list-style: none;
+
+    li {
+        margin: 0;
+    }
 }
