@@ -4,7 +4,7 @@
 
 // body background
 body {
-    background-color: $light-gray;
+    background-color: $white;
 }
 
 /**
@@ -12,7 +12,7 @@ body {
  */
 a {
     text-decoration: none;
-    color: $aegon-blue;
+    color: $brand-blue;
 
     @include on-event {
         text-decoration: underline;

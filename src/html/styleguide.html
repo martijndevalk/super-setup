@@ -8,15 +8,209 @@
 
 <body>
 
-<div id="app">
+    <div id="app">
 
-    <main role="main" class="main">
+        <main role="main" class="main">
+            <!-- Typography -->
+            <h1 class="sg-title">Headings</h1>
 
-    </main>
+            <!-- Standard Headings -->
+            <h1>Heading 1</h1>
+            <h2>Heading 2</h2>
+            <h3>Heading 3</h3>
+            <h4>Heading 4</h4>
+            <h5>Heading 5</h5>
+            <h6>Heading 6</h6>
 
-</div>
+            <!-- Other styled text tags -->
+            <strong>Bolded</strong>
+            <em>Italicized</em>
+            <a>Colored</a>
+            <u>Underlined</u>
+
+            <div class="clear"></div>
+
+            <!-- Tables -->
+            <h1 class="sg-title">Tables</h1>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Sex</th>
+                        <th>Location</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Martijn de Valk</td>
+                        <td>33</td>
+                        <td>Male</td>
+                        <td>Naarden</td>
+                    </tr>
+                    <tr>
+                        <td>Pascale van Tienen</td>
+                        <td>29</td>
+                        <td>Female</td>
+                        <td>Naarden</td>
+                    </tr>
+                    <tr>
+                        <td>Sven de Valk</td>
+                        <td>2</td>
+                        <td>Male</td>
+                        <td>Naarden</td>
+                    </tr>
+                    <tr>
+                        <td>Pip de Valk</td>
+                        <td>7</td>
+                        <td>Female</td>
+                        <td>Naarden</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="clear"></div>
+
+            <!-- Forms -->
+            <h1 class="sg-title">Forms</h1>
+
+            <form class="form">
+                <fieldset>
+                    <div class="row">
+                        <div class="col">
+                            <label for="">Labelname</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" placeholder="Placeholder">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="">Labelname</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" placeholder="Placeholder">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="">Labelname</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" placeholder="Placeholder">
+                        </div>
+                        <div class="col">
+                            <input type="text" placeholder="Placeholder">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="">Labelname</label>
+                        </div>
+                        <div class="col">
+                            <textarea name="name" rows="8" cols="80"></textarea>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+
+
+            <div class="control-group">
+                <h2>Checkboxes</h2>
+                <label class="control control--checkbox">First checkbox
+                          <input type="checkbox" checked="checked"/>
+                          <div class="control__indicator"></div>
+                        </label>
+                <label class="control control--checkbox">Second checkbox
+                          <input type="checkbox"/>
+                          <div class="control__indicator"></div>
+                        </label>
+                <label class="control control--checkbox">Disabled
+                          <input type="checkbox" disabled="disabled"/>
+                          <div class="control__indicator"></div>
+                        </label>
+                <label class="control control--checkbox">Disabled & checked
+                          <input type="checkbox" disabled="disabled" checked="checked"/>
+                          <div class="control__indicator"></div>
+                        </label>
+            </div>
+            <div class="control-group">
+                <h2>Radio buttons</h2>
+                <label class="control control--radio">First radio
+                          <input type="radio" name="radio" checked="checked"/>
+                          <div class="control__indicator"></div>
+                        </label>
+                <label class="control control--radio">Second radio
+                          <input type="radio" name="radio"/>
+                          <div class="control__indicator"></div>
+                        </label>
+                <label class="control control--radio">Disabled
+                          <input type="radio" name="radio2" disabled="disabled"/>
+                          <div class="control__indicator"></div>
+                        </label>
+                <label class="control control--radio">Disabled & checked
+                          <input type="radio" name="radio2" disabled="disabled" checked="checked"/>
+                          <div class="control__indicator"></div>
+                        </label>
+            </div>
+            <div class="control-group">
+                <h2>Select boxes</h2>
+                <div class="select">
+                    <select>
+                <option>First select</option>
+                <option>Option</option>
+                <option>Option</option>
+              </select>
+                    <div class="select__arrow"></div>
+                </div>
+                <div class="select">
+                    <select>
+                            <option>Second select</option>
+                            <option>Option</option>
+                            <option>Option</option>
+                          </select>
+                    <div class="select__arrow"></div>
+                </div>
+                <div class="select">
+                    <select disabled="disabled">
+                            <option>Disabled</option>
+                            <option>Option</option>
+                            <option>Option</option>
+                          </select>
+                    <div class="select__arrow"></div>
+                </div>
+            </div>
+
+
+            <!-- Buttons -->
+            <h1 class="sg-title">Buttons</h1>
+
+            <div class="clear"></div>
+
+            <a v-button class="button button--primary waves-effect" href="">Primary button</a>
+            <a v-button class="button button--secondary waves-effect" href="">Secondary button</a>
+            <a v-button class="button button--tertiary waves-effect" href="">Tertiary button</a>
+
+            <br /><br />
+
+            <a v-button class="button button--primary-hollow waves-effect" href="">Primary hollow button</a>
+            <a v-button class="button button--secondary-hollow waves-effect" href="">Secondary hollow button</a>
+            <a v-button class="button button--tertiary-hollow waves-effect" href="">Tertiary hollow button</a>
+
+            <br /><br />
+
+            <a v-button class="button button--primary-link waves-effect" href="">Primary link button</a>
+            <a v-button class="button button--secondary-link waves-effect" href="">Secondary link button</a>
+            <a v-button class="button button--tertiary-link waves-effect" href="">Tertiary link button</a>
+
+            <div class="clear"></div>
+        </main>
+
+    </div>
 
     @@include('includes/scripts.inc')
 
 </body>
+
 </html>

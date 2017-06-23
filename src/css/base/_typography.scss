@@ -67,28 +67,6 @@ li + li {
     margin-top: $base-line-height;
 }
 
-// Aegon list
-.aegon-list {
-    li {
-        position: relative;
-
-        @include max-screen($medium - 1) {
-            margin-left: 1rem;
-        }
-
-        &::before {
-            content: '';
-            width: 9px;
-            height: 9px;
-            position: absolute;
-            top: 0.4rem;
-            left: -1.1rem;
-            transform: rotate(-18deg);
-            background-color: $aegon-blue;
-        }
-    }
-}
-
 // Misc
 hr {
     margin-top: 3rem;

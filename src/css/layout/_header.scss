@@ -3,50 +3,5 @@
 // -----------------------------------------------------------------------------
 
 .header {
-    height: $header-height;
-    transition: height 400ms ease-out;
 
-    @include min-screen($large) {
-        @include when-inside('.language-menu-notifcation-is-visible') {
-            height: calc(#{$header-height} * 2);
-        }
-    }
-
-    .sticky {
-        width: 100%;
-        height: $header-height;
-        background-color: $white;
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 999;
-        display: flex;
-        align-items: center;
-        will-change: transform;
-        transition: transform 400ms ease-out;
-        transform: translateY(0);
-
-        @include min-screen($large) {
-            @include when-inside('.language-menu-notifcation-is-visible') {
-                transform: translateY($header-height);
-            }
-        }
-
-        &::after {
-            @include min-screen($large) {
-                content: '';
-                width: 100%;
-                height: 10px;
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                box-shadow: 0 2px 1px -1px rgba($black, 0.05);
-            }
-        }
-
-        > .container {
-            display: flex;
-            align-items: center;
-        }
-    }
 }

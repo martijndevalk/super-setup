@@ -1,23 +1,23 @@
 <meta charset="UTF-8">
-<title>Aegon</title>
+<title>Brand</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 
 <!-- Open Graph Tags -->
-<meta property="og:title" content="Aegon-title" />
+<meta property="og:title" content="Brand-title" />
 <meta property="og:type" content="Website" />
-<meta property="og:url" content="http://www.aegon.com/" />
-<meta property="og:image" content="http://www.aegon.com/image.jpg" />
-<meta property="og:description" content="Aegon-description" />
-<meta property="og:site_name" content="Aegon" />
+<meta property="og:url" content="http://www.Brand.com/" />
+<meta property="og:image" content="http://www.Brand.com/image.jpg" />
+<meta property="og:description" content="Brand-description" />
+<meta property="og:site_name" content="Brand" />
 
 <!-- Twitter Summary Card -->
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:site" content="@Aegon" />
-<meta name="twitter:title" content="Aegon-title" />
-<meta name="twitter:description" content="Aegon-description" />
-<meta name="twitter:image" content="http://www.aegon.com/image.jpg" />
+<meta name="twitter:site" content="@Brand" />
+<meta name="twitter:title" content="Brand-title" />
+<meta name="twitter:description" content="Brand-description" />
+<meta name="twitter:image" content="http://www.brand.com/image.jpg" />
 
 <!-- Favicons -->
 <link rel="shortcut icon" type="image/x-icon" href="/img/favicon/favicon.ico">

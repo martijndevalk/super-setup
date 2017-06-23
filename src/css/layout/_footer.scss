@@ -3,10 +3,5 @@
 // -----------------------------------------------------------------------------
 
 .footer {
-    padding: $base-line-height 0;
-    background-color: $prussian-blue;
 
-    @include min-screen($medium) {
-        padding: ($base-line-height * 2) 0 $base-line-height;
-    }
 }
