@@ -211,7 +211,7 @@ gulp.task('run-server', function() {
         server: "./dist",
         index: "/html/index.html",
         notify: false,
-        open: false,
+        open: true,
         reloadDebounce: 300,
         port: 8080
     });

@@ -1,8 +1,12 @@
 # Installation instructions - Projectname #
 
+## <a name="toc" href="#toc">Table of contents</a>
+
+- [Front-end](#front-end)
+- [Credits](#credits)
+
 ---
 ## <a name="front-end" href="#front-end">Front-end installation</a>
-[Back to top](#)
 
 Tasks that are needed to get the development enviroment running for front-end.
 
