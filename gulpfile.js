@@ -48,7 +48,6 @@ gulp.task('clean-dist', function () {
 
 // Javascript
 // Transpiling ES6 Modules to CommonJS Using Babel & Gulp
-// https://goo.gl/JsElNa
 
 gulp.task('build-js', function() {
 

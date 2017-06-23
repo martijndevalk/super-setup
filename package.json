@@ -1,4 +1,7 @@
 {
+  "name": "super-setup",
+  "version": "0.0.1",
+  "description": "Boilerplate setup",
   "name": "supersetup",
   "version": "1.0.0",
   "description": "Taskrunner setup",
@@ -49,6 +52,7 @@
     "vinyl-source-stream": "^1.1.0",
     "vue-template-compiler": "^2.3.4"
   },
+  "author": "Martijn de Valk",
   "browser": {
     "vue": "vue/dist/vue.common"
   },
